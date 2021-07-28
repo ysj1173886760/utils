@@ -1,16 +1,15 @@
 import os
 import subprocess
-import sys
 
 procname = "ffmpeg"
 
-src = "/home/data/dachuang/framework/vid_display"
-dst = "/home/data/dachuang/framework/vid_display_mp4"
+src = ""
+dst = ""
 
 fileList = os.listdir(src)
 
 for file in fileList:
-    procArgs = procname + " -y -i " + os.path.join(src, file) + " -vf scale=iw:-2 " + os.path.join(dst, (file + ".mp4"))
+    procArgs = procname + " -y -i " + os.path.join(src, file) + " -vf scale=iw:-2 " + os.path.join(dst, (file.split('.')[0] + ".mp4"))
     try:
         p = subprocess.Popen(procArgs, shell=True)
         p.wait()
