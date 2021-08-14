@@ -14,6 +14,14 @@ should be easy to change mp4 to other video format
 
 you need ffmpeg to run this
 
+##### translator
+
+not done yet.
+
+due to the encoding problem in my computer, shell can't display chinese character correctly.
+
+waiting to be fixed.
+
 ##### TODO LIST
 
 debug header
