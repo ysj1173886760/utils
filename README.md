@@ -22,6 +22,12 @@ due to the encoding problem in my computer, shell can't display chinese characte
 
 waiting to be fixed.
 
+##### generator
+
+prototype of code generator
+
+need decent python skills.
+
 ##### TODO LIST
 
 debug header
