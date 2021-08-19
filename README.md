@@ -28,6 +28,12 @@ prototype of code generator
 
 need decent python skills.
 
+##### line counter
+
+count the line of codes in the specific directory
+
+you can change the ext in the code by your self and count the file you want
+
 ##### TODO LIST
 
 debug header
