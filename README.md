@@ -39,3 +39,5 @@ you can change the ext in the code by your self and count the file you want
 debug header
 
 pattern based code generator
+
+automatic initialize sequence
