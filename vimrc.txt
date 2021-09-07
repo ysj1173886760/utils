@@ -1,0 +1,94 @@
+call plug#begin('~/.vim/plugged')
+	Plug 'tpope/vim-surround'
+	Plug 'scrooloose/syntastic'
+	Plug 'vim-airline/vim-airline'
+	Plug 'morhetz/gruvbox'
+	Plug 'scrooloose/nerdtree'
+	Plug 'airblade/vim-gitgutter'
+	Plug 'jiangmiao/auto-pairs'	
+	Plug 'easymotion/vim-easymotion'
+	Plug 'scrooloose/nerdcommenter'
+	Plug 'valloric/youcompleteme'
+	Plug 'octol/vim-cpp-enhanced-highlight'
+	Plug 'majutsushi/tagbar'
+call plug#end()
+
+set undodir=~/.vim/undodir
+set undofile
+if !isdirectory(&undodir)
+	call mkdir(&undodir, 'p', 0700)
+endif
+
+let mapleader=' '
+
+syntax enable
+syntax on
+
+set laststatus=2
+set ruler
+set number
+set hlsearch
+
+set tabstop=4
+set shiftwidth=4
+
+set autoindent
+
+set novisualbell
+set nocompatible
+set nobackup
+
+set showcmd
+set showmatch
+set showmode
+
+set incsearch
+" search ignoring case
+set ignorecase
+
+set noerrorbells
+set autoread
+
+filetype on
+filetype indent on
+filetype plugin on
+
+set wildmenu
+set wildmode=longest:list,full
+
+" turn off last search highlighting
+nnoremap <CR> :noh<CR><CR>
+
+if exists('$TMUX')
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\e[5 q\<Esc>\\"
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\e[2 q\<Esc>\\"
+else
+    let &t_SI = "\e[5 q"
+    let &t_EI = "\e[2 q"
+endif
+
+" plugin setting
+set background=dark
+colorscheme gruvbox
+
+" NERTTree setting
+nnoremap <leader>ntt :NERDTree<CR>
+nnoremap <leader>ntf :NERDTreeFind<CR>
+
+" syntax check setting
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_w = 0
+
+" commenter setting
+let g:NERDSpaceDelims = 1
+let g:NERDDefaultAlign = 'left'
+
+" tagbar
+nnoremap <leader>tb :TagbarToggle<CR>
