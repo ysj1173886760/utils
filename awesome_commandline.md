@@ -21,3 +21,16 @@ execute command on specified time:
 ```shell
 echo "ls -l" | at midnight
 ```
+
+check md5sum using re-direct
+
+it will output something if there has difference. And output nothing if they are same.
+
+you can also use "echo $!" to check the result, 0 means there is no error
+
+```shell
+diff <(md5sum musicbrainz-cmudb2020.db.gz) <(echo "a80fe4365a228d4096225068801771f8  musicbrainz-cmudb2020.db.gz")
+
+# basic pattern
+diff <(md5sum <your-file-name>) <(echo "checksum filename")
+```
