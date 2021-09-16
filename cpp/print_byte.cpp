@@ -16,7 +16,7 @@ struct print {};
 
 template<typename T>
 struct print<T, true> {
-    void func(T x) {
+    void operator() (T x) const {
         byte *p = (byte *)&x;
 
         for (int i = 0; i < sizeof(T) / sizeof(byte); i++) {
@@ -30,7 +30,7 @@ struct print<T, true> {
 
 template<typename T>
 struct print<T, false> {
-    void func(T x) {
+    void operator() (T x) const {
         byte *p = (byte *)&x;
 
         for (int i = 0; i < sizeof(T) / sizeof(byte); i++) {
@@ -43,13 +43,13 @@ struct print<T, false> {
 
 
 int main() {
-    print<int, true>{}.func(0x12345678);
-    print<int, false>{}.func(0x12345678);
+    print<int, true>{}(0x12345678);
+    print<int, false>{}(0x12345678);
 
-    print<float, true>{}.func(123.456);
-    print<float, false>{}.func(123.456);
+    print<float, true>{}(123.456);
+    print<float, false>{}(123.456);
 
-    print<float, true>{}.func(-123.456);
-    print<float, false>{}.func(-123.456);
+    print<float, true>{}(-123.456);
+    print<float, false>{}(-123.456);
     return 0;
 }
