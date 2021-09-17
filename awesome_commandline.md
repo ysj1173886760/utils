@@ -34,3 +34,9 @@ diff <(md5sum musicbrainz-cmudb2020.db.gz) <(echo "a80fe4365a228d409622506880177
 # basic pattern
 diff <(md5sum <your-file-name>) <(echo "checksum filename")
 ```
+
+check lib version
+
+```shell
+dpkg -l | grep <lib-name>
+```
