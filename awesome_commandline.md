@@ -40,3 +40,9 @@ check lib version
 ```shell
 dpkg -l | grep <lib-name>
 ```
+
+清除缓存
+
+```shell
+sudo sh -c "echo 3 > /proc/sys/vm/drop_caches"
+```
