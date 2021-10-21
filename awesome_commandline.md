@@ -41,8 +41,14 @@ check lib version
 dpkg -l | grep <lib-name>
 ```
 
-清除缓存
+clean cache
 
 ```shell
 sudo sh -c "echo 3 > /proc/sys/vm/drop_caches"
+```
+
+terminal countdown timer
+
+```shell
+countdown=3600 date1=$((`date +%s` + ${countdown})) watch -tpn1 'echo FOCUSING $(date -u --date @$(($date1 - `date +%s`)) +%H:%M:%S) | figlet -f big'
 ```
