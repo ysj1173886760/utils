@@ -52,3 +52,11 @@ terminal countdown timer
 ```shell
 countdown=3600 date1=$((`date +%s` + ${countdown})) watch -tpn1 'echo FOCUSING $(date -u --date @$(($date1 - `date +%s`)) +%H:%M:%S) | figlet -f big'
 ```
+
+remote file copy / ssh cp
+
+scp -r (recursive, directory only) -P (Caps specified port) username@hostname:/path/to/your/remote/file /path/to/save
+
+```shell
+scp -r -P 20231 root@120.236.247.203:/opt/code_chap_2_3/pycnml /home/sheep
+```
